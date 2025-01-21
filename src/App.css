@@ -36,3 +36,5 @@
     transform: rotate(360deg);
   }
 }
+
+.custom-header { background-color: #4CAF50; /* Change this to your desired color */ color: white; text-align: center; padding: 20px; }
