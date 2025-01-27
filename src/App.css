@@ -38,3 +38,31 @@
 }
 
 .custom-header { background-color: #4CAF50; /* Change this to your desired color */ color: white; text-align: center; padding: 20px; }
+
+/*Emojis*/
+
+.emoji-button{
+  padding:1rem 6rem;
+  border-radius: 10px;
+  margin: 2rem;
+  font-size: larger;
+  font-weight: 600;
+}
+
+
+
+.emoji-list{display: flex;justify-content: center;padding:2rem
+
+}
+
+.emoji-span{font-size: 4rem; margin: 5px; cursor: pointer; transition: color 0.3s;}
+
+.emoji-heading{display: flex;justify-content: center;}
+
+
+
+.emoji-span:hover {
+  transform: scale(1.2); /* Slightly increase the size */}
+
+/*Movies*/
+.movies-heading{display: flex;justify-content: center;margin-bottom: 2rem;}

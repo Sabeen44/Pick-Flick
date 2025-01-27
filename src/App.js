@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header';
 import EmojiList from './Movies.js';
 import MovieList from './Movies';
+//import FetchExample from './Fetchtest.js';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
      </div>
      <div>
        <EmojiList />
+       
        
     </div>
     </>
