@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,11 +35,25 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.custom-header { background-color: #4caf4f; color: white; text-align: center; padding: 20px;display: flex;
+  align-items: center;
+  }
+
+
+  
+
+.header-icon {
+  width: 100px;
+  height: 100px;
+  margin-right:2rem;
+  
 }
 
-.custom-header { background-color: #4CAF50; /* Change this to your desired color */ color: white; text-align: center; padding: 20px; }
-
 /*Emojis*/
+
+.button-container{display: flex;justify-content:center;}
 
 .emoji-button{
   padding:1rem 6rem;
@@ -47,17 +61,20 @@
   margin: 2rem;
   font-size: larger;
   font-weight: 600;
+  background-color: black;
+  color: azure;
 }
 
 
 
-.emoji-list{display: flex;justify-content: center;padding:2rem
+
+.emoji-list{display: flex;justify-content: center;padding:2rem;background-color: #D9D9D9;margin: 4rem;
 
 }
 
 .emoji-span{font-size: 4rem; margin: 5px; cursor: pointer; transition: color 0.3s;}
 
-.emoji-heading{display: flex;justify-content: center;}
+.emoji-heading{display: flex;justify-content:flex-start;margin: 4rem;}
 
 
 
@@ -65,4 +82,7 @@
   transform: scale(1.2); /* Slightly increase the size */}
 
 /*Movies*/
-.movies-heading{display: flex;justify-content: center;margin-bottom: 2rem;}
+.movies-heading{display: flex;justify-content:flex-start;margin:4rem;}
+
+/* .movies-container{width:80%;display: flex;justify-items: center;padding: 5rem;} */
+
