@@ -31,15 +31,22 @@ const EmojiCategories = () => {
   }
 
   return (
-    <div>
+    <>
       <h1>Emoji Categories</h1>
-      <ul>
-        {categories.map((category) => (
-          <li key={category.slug}>{category.name}</li>
+      <div className="emoji-list">
+        {categories.map((emoji) => (
+          <span
+            className="emoji-span"
+            key={emoji.slug}
+            title={emoji.unicodeName}
+          >
+            {emoji.character}
+          </span>
         ))}
-      </ul>
-    </div>
+      </div>
+    </>
   );
+  
 };
 
 export default EmojiCategories;
