@@ -38,91 +38,6 @@ const EmojiList = () => {
 
   let searchQuery = 'magnet';
 
-  // const fetchAndDisplayEmojis = async () => {
-  //   setLoading(true);
-  //   setButtonClicked(true);
-  //   try {
-  //     const response1 = await axios.get('https://emoji-api.com/emojis?access_key=352cbcc2559967a6e748bbd1b737ab1e71d5f6a5');
-  //     const response2 = await axios.get(`https://emoji-api.com/emojis?search=${searchQuery}&access_key=352cbcc2559967a6e748bbd1b737ab1e71d5f6a5`);
-
-  //     console.log('Response 1:', response1);
-  //     console.log('Response 2:', response2);
-
-  //     if  (Array.isArray(response1.data) && Array.isArray(response2.data)){
-  //       const allEmojis = [...response1.data, ...response2.data];
-  //       const filteredEmojis = allEmojis.filter(emoji => 
-  //         singleEmoji.includes(emoji.slug) || groupEmojis.includes(emoji.subGroup)
-  //       );
-  //       setEmojis(filteredEmojis);
-
-  //       // Select 5 random emojis
-  //       const shuffledEmojis = filteredEmojis.sort(() => 0.5 - Math.random());
-  //       const selectedEmojis = shuffledEmojis.slice(0, 50);
-  //       setRandomEmojis(selectedEmojis);
-
-  //       setLoading(false);
-  //       setShowEmojis(true);
-  //     } else {
-  //       throw new Error('Invalid data structure from API responses');
-  //     }
-      
-  //     setShowMovies(false);
-  //     setLoading(false);
-  //   } catch (error) {
-  //     console.log('error fetching', error);
-  //     setError(error);
-  //     setShowMovies(false);
-  //   }
-  // };
-
-  // const fetchMovies = async (genreId) => {
-  //   setLoading(true);
-  //   setError(null);
-  //   let retries = 3; // Number of retries
-  
-  //   const delay = ms => new Promise(resolve => setTimeout(resolve, ms)); // Helper function for delay
-  
-  //   const options = {
-  //     method: 'GET',
-  //     url: 'https://streaming-availability.p.rapidapi.com/shows/search/filters',
-  //     headers: {
-  //       'x-rapidapi-key': '3406472949msh5d311deacd86ae3p153b1ejsnadf249bfda5b',
-  //       'x-rapidapi-host': 'streaming-availability.p.rapidapi.com'
-  //     },
-  //     params: { country: 'us', catalogs: 'netflix,prime,hulu,peacock', show_type: 'movie', genre: genreId }
-  //   };
-  
-  //   while (retries > 0) {
-  //     try {
-  //       const response = await axios.request(options);
-  //       console.log(options);
-  //       console.log(response.data);
-  //       setMovies(response.data.shows || []);
-  //       setLoading(false);
-  //       setShowEmojis(false);
-  //       setShowMovies(true);
-  //       break; // Exit the loop if the request is successful
-  //     } catch (error) {
-  //       if (error.response && error.response.status === 429) {
-  //         retries -= 1;
-  //         if (retries > 0) {
-  //           // Wait for some time before retrying (exponential backoff)
-  //           const backoffTime = Math.pow(2, 3 - retries) * 1000;
-  //           console.log(`Retrying request in ${backoffTime / 1000} seconds...`);
-  //           await delay(backoffTime);
-  //         } else {
-  //           setError(new Error('Rate limit exceeded. Please try again later.'));
-  //           setLoading(false);
-  //           break;
-  //         }
-  //       } else {
-  //         setError(error);
-  //         setLoading(false);
-  //         break;
-  //       }
-  //     }
-  //   }
-  // };
 
   const fetchAndDisplayEmojis = async () => {
     setLoading(true);
@@ -193,19 +108,6 @@ const EmojiList = () => {
   };
   
 
-  // const handleEmojiClick = (emoji) => {
-  //   const mood = Object.keys(movieMood).find(mood => 
-  //     movieMood[mood].includes(emoji.character)
-  //   );
-  //   console.log(`Selected Emoji: ${emoji.character}, Mood: ${mood}`);
-  //   const genreId = genres[mood];
-  //   console.log(`Mapped Genre ID: ${genreId}`);
-  //   if (genreId) {
-  //     fetchMovies(genreId);
-  //   } else {
-  //     console.log("No genre found for this emoji mood.");
-  //   }
-  // };
   const handleEmojiClick = (emoji) => {
     const mood = Object.keys(movieMood).find(mood => 
       movieMood[mood].includes(emoji.character)
