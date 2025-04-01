@@ -17,7 +17,7 @@ function App() {
      <div>
        <EmojiList />
         <EmojiCategories/> 
-        {/* <MovieList/>  */}
+         {/* <MovieList/>   */}
        
        
     </div>

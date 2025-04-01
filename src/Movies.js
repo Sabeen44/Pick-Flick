@@ -15,18 +15,51 @@ const EmojiList = () => {
   const [showMovies, setShowMovies] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
 
-  const groupEmojis = useMemo(() => ["animal-mammal"
+  const groupEmojis = useMemo(() => ['flag'
+   
+],
 
-//'tool','person-activity','music' ,,,'family','heart','transport-air','flag','science',"grinning-face",'face-negative',"writing","person-fantasy"
-], []);
+
+// confirmed ##'music','heart','family','flag','tool'
+// 'person-activity','light-video',"place-geographic","place-map",'place-other','animal-mammal',"person-fantasy","face-concerned",'face-costume','face-negative','transport-air','other-object','medical','science','writing','money'
+// ##
+
+ []);
 
    const singleEmoji = useMemo(() => 
     [
-//        'e0-6-television',"e0-6-camera",'e0-6-videocassette','e0-6-camerawithflash','e1-nazaramulet','e14-hamsa',
+//"e5-0-older-person"
+//     'e0-6-television',"e0-6-camera",'e0-6-videocassette','e1-0-camera-with-flash',  
+// confirmed ## 'e0-6-woman-dancing','e3-0-man-dancing',
+// 'e1-0-grinning-face', 
+//  'e0-6-grinning-face-with-big-eyes',
+//  'e0-6-grinning-face-with-smiling-eyes',  
+//  'e0-6-beaming-face-with-smiling-eyes',  
+//  'e0-6-grinning-squinting-face',  
+//  'e0-6-grinning-face-with-sweat',  
+//  'e0-6-face-with-tears-of-joy',     
+// 'e1-0-upside-down-face',
+//  'e14-0-melting-face',
+//  'e0-6-winking-face'
+// 'e0-6-smiling-face-with-smiling-eyes'
+// 'e1-0-smiling-face-with-halo',
+// 'e0-7-globe-showing-europe-africa',
+//'e1-0-nerd-face','e5-0-face-with-monocle',
+//'e0-7-globe-showing-americas',
+//'e11-0-compass','e3-0-eagle',"e11-0-hiking-boot"
+//"e0-6-old-man","e0-6-old-woman","e12-1-person-white-hair","e11-0-woman-white-hair",
+//"e5-0-older-person"
+
+// ##
+
+// 'e1-nazaramulet','e14-hamsa'
 //     'e12-0-mechanical-arm','e12-0-mechanical-leg',"e0-7-detective",'e0-6-police-officer', 
 // "e13-0-ninja","e14-0-person-with-crown",
 // "e11-0-superhero", 
-// "e11-0-supervillain","e0-6-old-woman","e0-6-old-man"
+// "e11-0-supervillain","e0-6-old-woman","e0-6-old-man",'e0-6-page-with-curl','e0-6-scroll','e0-6-page-facing-up','e0-6-newspaper','e0-7-rolled-up-newspaper','e0-6-ledger',"e0-7-old-key","e11-0-abacus"
+
+
+
    
    ], []);
 
@@ -52,11 +85,12 @@ const EmojiList = () => {
           singleEmoji.includes(emoji.slug) || groupEmojis.includes(emoji.subGroup)
         );
         setEmojis(filteredEmojis);
-
+        console.log(emojis);
         // Select 5 random emojis
         const shuffledEmojis = filteredEmojis.sort(() => 0.5 - Math.random());
         const selectedEmojis = shuffledEmojis.slice(0, 50);
         setRandomEmojis(selectedEmojis);
+       
 
         setLoading(false);
         setShowEmojis(true);
@@ -133,7 +167,7 @@ const EmojiList = () => {
         {error && <div>Error: {error.message}</div>}
         {buttonClicked && !showMovies && (
           <>
-            <h2 className='emoji-heading'>Select emoji for your mood</h2>
+            <h2 className='emoji-heading'>Select an emoji that matches your mood</h2>
             {!loading && !error && showEmojis && (
               <div className='emoji-list'>
                 {randomEmojis.map((emoji) => (
