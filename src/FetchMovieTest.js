@@ -15,31 +15,7 @@ const MovieList = () => {
     setLoading(true);
     setError(null);
 
-  //   const options = {
-  //     method: 'GET',
-  //     url: 'https://streaming-availability.p.rapidapi.com/shows/search/filters',
-  //     headers: {
-  //       'x-rapidapi-key': '3406472949msh5d311deacd86ae3p153b1ejsnadf249bfda5b',
-  //       'x-rapidapi-host': 'streaming-availability.p.rapidapi.com'
-  //     },
-  //     params: { country: 'us', catalogs: 'netflix,prime,hulu,peacock', show_type: 'movie', genre: '53', sort_by: 'popularity', limit: 1 }
-  //   };
-
-  //   try {
-  //     const response = await axios.request(options);
-  //     console.log('moviesTest:', options);
-  //     console.log(response.data);
-  //     setMovie(response.data.shows ? response.data.shows[0] : null);
-  //     setLoading(false);
-  //   } catch (error) {
-  //     console.log('Error fetching movie:', error);
-  //     if (error.response && error.response.status === 429) {
-  //       setError(new Error('Rate limit exceeded. Please try again later.'));
-  //     } else {
-  //       setError(error);
-  //     }
-  //     setLoading(false);
-  //   }
+ 
   const options = {
     method: 'GET',
     url: 'https://streaming-availability.p.rapidapi.com/genres',

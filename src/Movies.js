@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import axios from 'axios';
 import movieMood from './MoodArray.js';
 import genres from './GenreObject';
+import Header from './Header.js';
 
 import MovieCard from './MovieCard.js';
 
@@ -14,15 +15,16 @@ const EmojiList = () => {
   const [showEmojis, setShowEmojis] = useState(false); // State for emoji visibility
   const [showMovies, setShowMovies] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
-  const groupEmojis = useMemo(() => ['flag'
+  const groupEmojis = useMemo(() => [
    
-],
 
 
-// confirmed ##'music','heart','family','flag','tool'
-// 'person-activity','light-video',"place-geographic","place-map",'place-other','animal-mammal',"person-fantasy","face-concerned",'face-costume','face-negative','transport-air','other-object','medical','science','writing','money'
-// ##
+
+'music','heart','family','flag','tool',
+ 'person-activity','light-video',"place-geographic","place-map",'place-other','animal-mammal',"person-fantasy","face-concerned",'face-costume','face-negative','transport-air','other-object','medical','science','writing','money'],
+
 
  []);
 
@@ -75,6 +77,7 @@ const EmojiList = () => {
   const fetchAndDisplayEmojis = async () => {
     setLoading(true);
     setButtonClicked(true);
+    setIsVisible(false);
     try {
       const response1 = await axios.get('https://emoji-api.com/emojis?access_key=352cbcc2559967a6e748bbd1b737ab1e71d5f6a5');
 
@@ -88,7 +91,7 @@ const EmojiList = () => {
         console.log(emojis);
         // Select 5 random emojis
         const shuffledEmojis = filteredEmojis.sort(() => 0.5 - Math.random());
-        const selectedEmojis = shuffledEmojis.slice(0, 50);
+        const selectedEmojis = shuffledEmojis.slice(0, 10);
         setRandomEmojis(selectedEmojis);
        
 
@@ -151,6 +154,7 @@ const EmojiList = () => {
     console.log(`Mapped Genre Name: ${genreName}`);
     if (genreName) {
       fetchMovies(genreName);
+      
     } else {
       console.log("No genre found for this emoji mood.");
     }
@@ -159,8 +163,10 @@ const EmojiList = () => {
 
   return (
     <>
+    {isVisible && <Header/>}
       <div className='button-container'>
         <button onClick={fetchAndDisplayEmojis} className="emoji-button">Display Emojis</button>
+        
       </div>
       <div>
         {loading && <div>Loading...</div>}
@@ -186,7 +192,7 @@ const EmojiList = () => {
         {showMovies && !loading && !error && movies.length > 0 && (
           <>
             <div>
-              <h2 className='movies-heading'>Movies to match your mood</h2>
+              <h2 className='movies-heading'>Movie Choices</h2>
             </div>
             <div className='container'>
               <div className="row">
