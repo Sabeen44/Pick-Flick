@@ -2,6 +2,7 @@
   "name": "pick-flick",
   "version": "0.1.0",
   "private": true,
+   "homepage": "https://Sabeen44.github.io/Pick-Flick",
   "dependencies": {
     "axios": "^1.7.9",
     "axios-rate-limit": "^1.4.0",
@@ -11,12 +12,17 @@
     "react-bootstrap": "^2.10.7",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1"
+   
+
   },
   "scripts": {
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -b main -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+   
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +43,7 @@
     ]
   },
   "devDependencies": {
+  
     "web-vitals": "^4.2.4"
   }
 }
