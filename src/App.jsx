@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import EmojiPicker from './components/EmojiPicker';
 import MovieResults from './components/MovieResults';
-import InfoModal from './components/InfoModal';
 import { fetchMoviesByGenres } from './api/tmdb';
+import InfoModal from './components/Infomodal';
 
 function App() {
   const [selectedEmojis, setSelectedEmojis] = useState([]);
