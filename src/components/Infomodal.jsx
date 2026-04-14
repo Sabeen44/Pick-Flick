@@ -107,3 +107,4 @@ export default function InfoModal({ isOpen, onClose }) {
     </div>
   );
 }
+
